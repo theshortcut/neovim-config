@@ -17,6 +17,6 @@ null_ls.setup({
     formatting.stylua,
     formatting.rustfmt,
     formatting.terraform_fmt,
-    -- diagnostics.flake8
+    diagnostics.vale,
   },
 })
