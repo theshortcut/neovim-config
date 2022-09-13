@@ -68,6 +68,7 @@ return packer.startup(function(use)
 
   -- Colorschemes
   use "lunarvim/colorschemes"
+  use "folke/tokyonight.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -117,6 +118,25 @@ return packer.startup(function(use)
     run = ":TSUpdate",
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
+
+  -- Testing
+  use "vim-test/vim-test"
+  use({
+    "nvim-neotest/neotest",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim",
+      "marilari88/neotest-vitest",
+    },
+    config = function()
+      require('neotest').setup({
+        adapters = {
+          require('neotest-vitest')
+        }
+      })
+    end
+  })
 
   -- Git
   use "lewis6991/gitsigns.nvim"
