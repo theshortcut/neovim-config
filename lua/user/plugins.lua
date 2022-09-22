@@ -59,6 +59,17 @@ return packer.startup(function(use)
   use 'antoinemadec/FixCursorHold.nvim' -- This is needed to fix lsp doc highlight
   use 'ggandor/lightspeed.nvim'
   use {
+    'xiyaowong/nvim-transparent',
+    config = function()
+      require('transparent').setup {
+        enable = true,
+        styles = {
+          sidebars = "transparent"
+        }
+      }
+    end,
+  }
+  use {
     'norcalli/nvim-colorizer.lua',
     config = function()
       require('colorizer').setup()
