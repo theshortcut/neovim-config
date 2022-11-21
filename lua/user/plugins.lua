@@ -51,7 +51,6 @@ return packer.startup(function(use)
   use { 'akinsho/bufferline.nvim', tag = 'v2.*', requires = 'kyazdani42/nvim-web-devicons' }
   use 'moll/vim-bbye'
   use 'nvim-lualine/lualine.nvim'
-  use { 'akinsho/toggleterm.nvim', tag = 'v1.*' }
   use 'ahmedkhalf/project.nvim'
   use 'lewis6991/impatient.nvim'
   use 'lukas-reineke/indent-blankline.nvim'
@@ -154,11 +153,13 @@ return packer.startup(function(use)
       'nvim-treesitter/nvim-treesitter',
       'antoinemadec/FixCursorHold.nvim',
       'marilari88/neotest-vitest',
+      'rouge8/neotest-rust',
     },
     config = function()
       require('neotest').setup {
         adapters = {
           require 'neotest-vitest',
+          require 'neotest-rust',
         },
       }
     end,

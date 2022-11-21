@@ -6,6 +6,7 @@ end
 local servers = {
   'sumneko_lua',
   'cssls',
+  'cssmodules_ls',
   'html',
   'tsserver',
   'svelte',
@@ -13,6 +14,7 @@ local servers = {
   'bashls',
   'jsonls',
   'yamlls',
+  'wgsl_analyzer',
 }
 
 lsp_installer.setup()
