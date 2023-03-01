@@ -46,9 +46,10 @@ return packer.startup(function(use)
   use 'nvim-lua/plenary.nvim' -- Useful lua functions used by lots of plugins
   use 'windwp/nvim-autopairs' -- Autopairs, integrates with both cmp and treesitter
   use 'numToStr/Comment.nvim' -- Easily comment stuff
-  use 'kyazdani42/nvim-web-devicons'
-  use 'kyazdani42/nvim-tree.lua'
-  use { 'akinsho/bufferline.nvim', tag = 'v2.*', requires = 'kyazdani42/nvim-web-devicons' }
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
+  use 'nvim-tree/nvim-web-devicons'
+  use 'nvim-tree/nvim-tree.lua'
+  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
   use 'moll/vim-bbye'
   use 'nvim-lualine/lualine.nvim'
   use 'ahmedkhalf/project.nvim'
@@ -87,12 +88,12 @@ return packer.startup(function(use)
 
   -- Colorschemes
   use 'lunarvim/colorschemes'
-  use {'folke/tokyonight.nvim',     config = function()
-      require('tokyonight').setup({
+  use { 'folke/tokyonight.nvim', config = function()
+    require('tokyonight').setup({
       transparent = true
     })
-    end,
-}
+  end,
+  }
 
   -- cmp plugins
   use 'hrsh7th/nvim-cmp' -- The completion plugin
@@ -108,7 +109,8 @@ return packer.startup(function(use)
 
   -- LSP
   use 'neovim/nvim-lspconfig' -- enable LSP
-  use 'williamboman/nvim-lsp-installer' -- simple to use language server installer
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
   use 'jose-elias-alvarez/null-ls.nvim' -- for formatters and linters
   use 'RRethy/vim-illuminate'
   use 'simrat39/rust-tools.nvim'
@@ -142,7 +144,6 @@ return packer.startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
   }
-  use 'JoosepAlviste/nvim-ts-context-commentstring'
 
   -- Testing
   use 'vim-test/vim-test'
