@@ -62,7 +62,6 @@ return packer.startup(function(use)
     'xiyaowong/nvim-transparent',
     config = function()
       require('transparent').setup {
-        enable = true,
         styles = {
           sidebars = "transparent"
         }
