@@ -5,6 +5,7 @@ local servers = {
   'html',
   'tsserver',
   'svelte',
+  'astro',
   'eslint',
   'bashls',
   'jsonls',
